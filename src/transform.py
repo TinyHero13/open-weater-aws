@@ -1,5 +1,6 @@
 from src.extract import extract
 import pandas as pd
+from datetime import datetime, timedelta, timezone
 
 def transform():
     temp_list = extract()
@@ -33,7 +34,8 @@ def transform():
                 'temp_max': temp_max,
                 'pressure': pressure,
                 'humidity': humidity,
-                'name': item['name']
+                'name': item['name'],
+                'date': datetime.now(timezone(timedelta(hours=-3)))
             })
 
     df = pd.DataFrame(rows)
