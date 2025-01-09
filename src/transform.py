@@ -37,6 +37,5 @@ def transform():
             })
 
     df = pd.DataFrame(rows)
-    print(df)
 
-transform()
+    return df
